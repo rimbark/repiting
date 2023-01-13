@@ -1,0 +1,13 @@
+.app {
+    margin: auto;
+    width: 1600px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-auto-flow: row;
+}

@@ -1,0 +1,31 @@
+.blockPost {
+    margin: 10px 0 0 100px;
+    width: 50%;
+    border-radius: 10%;
+    background-color: cadetblue;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "ava text"
+                         "name likes";
+    padding: 10px;
+}
+
+.ava {
+    grid-area: ava;
+    width: 50px;
+    border-radius: 30%;
+}
+
+.name {
+    grid-area: name;
+}
+
+.text {
+    grid-area: text;
+    font-size: 20px;
+}
+
+.likes {
+    grid-area: likes;
+}

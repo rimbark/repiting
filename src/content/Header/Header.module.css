@@ -1,0 +1,9 @@
+.header {
+    margin: 0;
+    display: grid;
+    background-color: wheat;
+}
+
+.header img {
+    width: 100px;
+}

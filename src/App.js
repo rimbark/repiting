@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import style from './App.module.css';
+import Header from "./content/Header/Header";
+import MainContent from "./content/MainContent/MainContent";
+import NavBar from "./content/NavBar/NavBar";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(props) {
+    return (
+        <page className={style.app}>
+            <header>
+                <Header/>
+            </header>
+            <content className={style.content}>
+                <NavBar/>
+                <MainContent state={props.state} addPost={props.addPost}/>
+            </content>
+        </page>
+    );
 }
 
 export default App;
