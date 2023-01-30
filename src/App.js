@@ -6,15 +6,15 @@ import MainContent from './content/MainContent/MainContent'
 
 function App() {
     return (
-        <page className={style.app}>
+        <div className={style.app}>
             <header>
                 <Header/>
             </header>
-            <content className={style.content}>
+            <div className={style.content}>
                 <NavBar/>
                 <MainContent/>
-            </content>
-        </page>
+            </div>
+        </div>
     );
 }
 

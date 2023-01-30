@@ -7,6 +7,11 @@
     background-image: url("https://img.freepik.com/free-photo/vivid-blurred-colorful-background_58702-2655.jpg?w=2000");
 }
 
+.avatar {
+    width: 150px;
+    height: 150px;
+}
+
 .myPosting {
     padding: 50px 0;
     background-color: cadetblue;

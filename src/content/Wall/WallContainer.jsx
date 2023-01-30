@@ -1,19 +1,52 @@
 import React from 'react'
-import Wall from './Wall'
 import {connect} from 'react-redux'
-import {changeText, sendText} from '../../redux/profileReducer'
+import Wall from './Wall'
+import axios from 'axios'
+import {changeText, loadProfile, sendText} from '../../redux/profileReducer'
 
 class WallContainer extends React.Component {
-    render () {
+  // componentDidMount () {
+  //   debugger
+  //   // axios.get(`https://social-network.samuraijs.com/api/1.0/profile/2`)
+  //   // .then(response => {
+  //   //   this.props.loadProfile(response.data)
+  //   // })
+  //   this.props.wallData = {
+  //     inputPosts: [
+  //       {
+  //         id: 1,
+  //         ava: 'https://pic.rutubelist.ru/user/66/37/66370b638af9d17b6d6a359d2e7c29d5.jpg',
+  //         name: 'Vasya',
+  //         text: 'First! Bitches!',
+  //         likesCount: 5
+  //       },
+  //       {
+  //         id: 2,
+  //         ava: 'https://pic.rutubelist.ru/user/66/37/66370b638af9d17b6d6a359d2e7c29d5.jpg',
+  //         name: 'Petya',
+  //         text: 'Second message :(',
+  //         likesCount: 10
+  //       }
+  //     ],
+  //     outputPostBody: '',
+  //     userId: 1
+  //   }
+  // }
+
+  render () {
     return (
-        <div>
-          <Wall {...this.props}/>
-        </div>
-    )}
+        <Wall {...this.props}/>
+    )
+  }
 }
 
-let mapStateToProps = (state) => ({
-  wallData: state.profileReducer.wallData
-})
+const mapStateToProps = (state) => {
+  return {
+    wallData: state.profileReducer.wallData,
+    profileInfo: state.profileReducer.profileInfo
+  }
+}
 
-export default connect(mapStateToProps, {changeText, sendText})(WallContainer)
+export default connect(mapStateToProps,
+    {changeText, loadProfile, sendText})(
+    WallContainer)

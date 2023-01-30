@@ -1,19 +1,21 @@
-import React from 'react';
-import style from './MainContent.module.css'
-import {Route, Routes} from "react-router-dom";
+import React from 'react'
+import {Route, Routes} from 'react-router-dom'
+import MessagesContainer from '../Messages/MessagesContainer'
+import UsersContainer from '../Users/UsersContainer'
 import WallContainer from '../Wall/WallContainer'
 
 const MainContent = () => {
-    return (
-        <div className={style.placement}>
-            <Routes>
-                <Route path={"/wall/*"} element={<WallContainer/>}/>
-                <Route path={'/messages/*'} element={<MessagesContainer/>}/>
-                {/*<Music/>*/}
-                {/*<Photos/>*/}
-            </Routes>
-        </div>
-    );
+  return (
+      <div>
+        <Routes>
+          <Route path={'/wall/*'} element={<WallContainer/>}/>
+          <Route path={'/messages/*'} element={<MessagesContainer/>}/>
+          <Route path={'/users/*'} element={<UsersContainer/>}/>
+          {/*<Music/>*/}
+          {/*<Photos/>*/}
+        </Routes>
+      </div>
+  )
 }
 
-export default MainContent;
+export default MainContent
