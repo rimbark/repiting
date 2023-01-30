@@ -12,16 +12,22 @@ const Wall = (props) => {
     props.changeText(text)
   }
 
-debugger
+  debugger
   return (
       <div className={style.wall}>
         <div className={style.image}>
-          <img className={style.avatar} src={defaultAva} alt="ava"/>
+          <img className={style.avatar}
+               src={props.profileInfo.photos.large === null
+                   ? defaultAva
+                   : props.profileInfo.photos.large} alt="ava"/>
         </div>
         <div className={style.myPosting}>
           <textarea className={style.textArea} onChange={onTextChanging}
                     value={props.wallData.outputPostBody}></textarea>
-          <button onClick={() => {props.sendText()}}>Push me to sent message</button>
+          <button onClick={() => {
+            props.sendText()
+          }}>Push me to sent message
+          </button>
         </div>
         <div className={style.myPosts}>
           {inputPost}
